@@ -17,8 +17,8 @@ const render = async (path, element) => {
 
     try {
         const component = routes.find(route => route.path === _path)?.component || NotFoundPage;
-        //   $root.replaceChildren(await component());
-        element.innerHTML = await component();
+        element.replaceChildren(await component());
+        // element.innerHTML = await component();
     } catch (err) {
         console.error(err);
     }
