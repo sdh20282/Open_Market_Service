@@ -1,22 +1,46 @@
 export default () => {
     const header = document.createElement('header');
     header.style.width = '1280px';
-    header.style.backgroundColor = 'aqua';
     header.style.margin = '0 auto';
     header.style.display = 'flex';
+    header.style.alignItems = 'center';
     header.style.padding = '22px 0';
 
     const title = document.createElement('h1');
-    title.style.width = '124px'
-    title.style.height = '38px'
+    title.style.width = '124px';
+    title.style.height = '38px';
+    title.style.margin = '0';
 
     const title_image = document.createElement('img');
     title_image.setAttribute('src', './src/images/Logo-hodu.png');
     title_image.setAttribute('alt', '호두 쇼핑몰 홈페이지 로고');
     title_image.style.width = '100%';
 
-    const product_search = document.createElement('input');
-    product_search.setAttribute('type', 'text');
+    const search_form = document.createElement('form');
+    search_form.style.width = '400px';
+    search_form.style.height = '46px';
+    search_form.style.display = 'flex';
+    search_form.style.marginLeft = '30px';
+    search_form.style.padding = '0 22px';
+    search_form.style.border = '2px solid #21BF48';
+    search_form.style.borderRadius = '50px';
+    search_form.style.boxSizing = 'border-box';
+
+    const search_input = document.createElement('input');
+    search_input.setAttribute('type', 'text');
+    search_input.setAttribute('placeholder', '상품을 검색해보세요!');
+    search_input.style.border = '0'
+    search_input.style.outline = '0'
+
+    const search_button = document.createElement('button');
+    search_button.style.padding = '0';
+    search_button.style.border = '0';
+    search_button.style.backgroundColor = 'inherit';
+    search_button.style.marginLeft = 'auto';
+    
+    const search_button_image = document.createElement('img');
+    search_button_image.setAttribute('src', './src/images/search.png');
+    search_button_image.style.width = '28px';
 
     const nav = document.createElement('nav');
     nav.style.display = 'flex';
@@ -26,6 +50,7 @@ export default () => {
     const cart = document.createElement('a');
     cart.style.width = '46px';
     cart.style.height = '50px';
+    cart.style.marginRight = '26px';
 
     const cart_image = document.createElement('img');
     cart_image.setAttribute('src', './src/images/shopping-cart.png');
@@ -42,16 +67,15 @@ export default () => {
     login_image.style.width = '100%';
 
     header.appendChild(title);
-    header.appendChild(product_search);
+    header.appendChild(search_form);
     header.appendChild(nav);
-
     title.appendChild(title_image);
-
+    search_form.appendChild(search_input);
+    search_form.appendChild(search_button);
+    search_button.appendChild(search_button_image);
     nav.appendChild(cart);
     nav.appendChild(login);
-
     cart.appendChild(cart_image);
-    
     login.appendChild(login_image);
 
     return header
