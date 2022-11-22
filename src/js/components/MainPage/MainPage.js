@@ -1,6 +1,6 @@
 import Header from "./header.js";
 
-const Main = () => {
+const MainPage = () => {
     const body = document.body;
     body.style.margin = '0'
     body.style.padding = '0'
@@ -13,4 +13,4 @@ const Main = () => {
     return fragment;
 };
 
-export default Main;
+export default MainPage;

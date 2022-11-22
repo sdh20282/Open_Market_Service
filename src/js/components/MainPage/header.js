@@ -11,6 +11,10 @@ export default () => {
     title.style.height = '38px';
     title.style.margin = '0';
 
+    const title_link = document.createElement('a');
+    title_link.setAttribute('href', '/');
+    title_link.style.cursor = 'pointer';
+
     const title_image = document.createElement('img');
     title_image.setAttribute('src', './src/images/Logo-hodu.png');
     title_image.setAttribute('alt', '호두 쇼핑몰 홈페이지 로고');
@@ -29,17 +33,21 @@ export default () => {
     const search_input = document.createElement('input');
     search_input.setAttribute('type', 'text');
     search_input.setAttribute('placeholder', '상품을 검색해보세요!');
+    search_input.style.flexGrow = '1'
     search_input.style.border = '0'
     search_input.style.outline = '0'
 
     const search_button = document.createElement('button');
+    search_button.setAttribute('id', 'search');
     search_button.style.padding = '0';
     search_button.style.border = '0';
     search_button.style.backgroundColor = 'inherit';
-    search_button.style.marginLeft = 'auto';
+    search_button.style.marginLeft = '10px';
+    search_button.style.cursor = 'pointer';
     
     const search_button_image = document.createElement('img');
     search_button_image.setAttribute('src', './src/images/search.png');
+    search_button_image.setAttribute('alt', '검색 이미지');
     search_button_image.style.width = '28px';
 
     const nav = document.createElement('nav');
@@ -48,9 +56,11 @@ export default () => {
     nav.style.marginLeft = 'auto';
 
     const cart = document.createElement('a');
+    cart.setAttribute('href', '/');
     cart.style.width = '46px';
     cart.style.height = '50px';
     cart.style.marginRight = '26px';
+    cart.style.cursor = 'pointer';
 
     const cart_image = document.createElement('img');
     cart_image.setAttribute('src', './src/images/shopping-cart.png');
@@ -58,8 +68,10 @@ export default () => {
     cart_image.style.width = '100%';
     
     const login = document.createElement('a');
+    login.setAttribute('href', '/login');
     login.style.width = '56px';
     login.style.height = '50px';
+    login.style.cursor = 'pointer';
 
     const login_image = document.createElement('img');
     login_image.setAttribute('src', './src/images/my-page.png');
@@ -69,7 +81,8 @@ export default () => {
     header.appendChild(title);
     header.appendChild(search_form);
     header.appendChild(nav);
-    title.appendChild(title_image);
+    title.appendChild(title_link);
+    title_link.appendChild(title_image);
     search_form.appendChild(search_input);
     search_form.appendChild(search_button);
     search_button.appendChild(search_button_image);

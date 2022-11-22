@@ -1,7 +1,10 @@
 // index.js
-import render from './route.js';
+import { initRouter } from './router.js';
 
-const $root = document.getElementById('root');
+const $root = document.querySelector("#root");
+
+initRouter($root);
+
 // const $navigation = document.getElementById('navigation');
 
 // $navigation.addEventListener('click', e => {
