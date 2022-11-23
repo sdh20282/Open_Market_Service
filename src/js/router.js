@@ -1,14 +1,14 @@
-import MainPage from './components/MainPage/MainPage.js'
-import LoginPage from './components/LoginPage/LoginPage.js'
-import NotFoundPage from './components/NotFoundPage/main.js'
+import MainPage from './pages/MainPage/MainPage.js'
+import LoginPage from './pages/LoginPage/LoginPage.js'
+import NotFoundPage from './pages/NotFoundPage/main.js'
 
-import MainPageController from './controllers/MainPage/MainPageController.js'
-import initLoginPageController from './controllers/LoginPage/LoginPageController.js'
+import MainPageScript from './scripts/MainPage/MainPageScript.js'
+import initLoginPageScript from './scripts/LoginPage/LoginPageScript.js'
 
 
 const routes = [
-    { path: '/', component: MainPage, controller: MainPageController },
-    { path: '/login', component: LoginPage, controller: initLoginPageController },
+    { path: '/', component: MainPage, activeScript: MainPageScript },
+    { path: '/login', component: LoginPage, activeScript: initLoginPageScript },
 ];
 
 const render = async (path, element) => {
@@ -26,8 +26,8 @@ const render = async (path, element) => {
         }
 
         element.replaceChildren(page.component());
-        initRoutingEvent();
-        page.controller();
+        initLinks();
+        page.activeScript();
 
 
         // const component = routes.find(route => route.path === _path)?.component || NotFoundPage;
@@ -61,7 +61,7 @@ const initRouter = (element) => {
     });
 }
 
-const initRoutingEvent = async () => {
+const initLinks = async () => {
     /**
      * a 태그의 기존 이벤트 대신 라우팅이 일어날 수 있도록 한다. 
      * URL에 변경사항이 반영될 수 있도록 한다.
@@ -70,6 +70,10 @@ const initRoutingEvent = async () => {
         item.addEventListener('click', (event) => {
             event.preventDefault();
             const pathName = event.currentTarget.getAttribute("href");
+            
+            // 현재 페이지의 URL과 같은 URL일 경우 라우팅하지 않는다.
+            if (window.location.pathname === pathName) return;
+
             window.history.pushState({}, pathName, window.location.origin + pathName);
             render(pathName, document.querySelector("#root"));
         })

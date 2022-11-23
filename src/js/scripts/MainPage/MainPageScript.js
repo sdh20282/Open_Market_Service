@@ -6,8 +6,8 @@ const preventFromEvent = () => {
     });
 }
 
-const initMainPageController = () => {
+const MainPageScript = () => {
     preventFromEvent();
 }
 
-export default initMainPageController;
+export default MainPageScript;
