@@ -1,8 +1,20 @@
 // index.js
 import { initRouter } from './router.js';
 
+const initFont = () => {
+    const font = document.createElement('link');
+    font.setAttribute('href', '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+    font.setAttribute('rel', 'stylesheet');
+    font.setAttribute('type', 'text/css');
+
+    document.head.appendChild(font);
+    document.body.style.fontFamily = "'Spoqa Han Sans Neo', 'sans-serif'";
+    
+}
+
 const $root = document.querySelector("#root");
 
+initFont();
 initRouter($root);
 
 // const $navigation = document.getElementById('navigation');

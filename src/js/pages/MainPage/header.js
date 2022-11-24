@@ -1,3 +1,5 @@
+// const 
+
 export default () => {
     const header = document.createElement('header');
     header.style.width = '1280px';
@@ -75,7 +77,7 @@ export default () => {
 
     const login_image = document.createElement('img');
     login_image.setAttribute('src', './src/images/my-page.png');
-    login_image.setAttribute('alt', '장바구니 이미지');
+    login_image.setAttribute('alt', '로그인 이미지');
     login_image.style.width = '100%';
 
     header.appendChild(title);

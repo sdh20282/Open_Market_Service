@@ -1,24 +1,56 @@
+import { selectorDefaultStyle, formDefaultStyle, inputDefaultStyle, buttonDefaultStyle } from '../../components/LoginPage/layouts.js'
+
 export default () => {
     const main = document.createElement('main');
     main.style.width = '550px';
     main.style.margin = '0 auto';
+
+    const temp = document.createElement('div');
+    temp.style.content = 'asdf';
+    temp.style.width = '10px';
+    temp.style.height = '10px';
+    temp.style.backgroundColor = 'red';
     
-    const purchaseLogin = document.createElement('button');
-    purchaseLogin.style.width = '275px';
-    purchaseLogin.style.height = '80px';
-    purchaseLogin.textContent = '구매회원 로그인';
-    purchaseLogin.style.border = 'border: 1px solid #C4C4C4';
-    purchaseLogin.style.borderRadius = '10px';
+    const purchaserLoginSelect = document.createElement('button');
+    selectorDefaultStyle(purchaserLoginSelect);
+    purchaserLoginSelect.style.backgroundColor = 'white';
+    purchaserLoginSelect.textContent = '구매회원 로그인';
+    purchaserLoginSelect.after(temp);
 
-    const registerLogin = document.createElement('button');
-    registerLogin.style.width = '275px';
-    registerLogin.style.height = '80px';
-    registerLogin.textContent = '판매회원 로그인';
-    registerLogin.style.border = 'border: 1px solid #C4C4C4';
-    registerLogin.style.borderRadius = '10px';
+    const sellerLoginSelect = document.createElement('button');
+    selectorDefaultStyle(sellerLoginSelect);
+    sellerLoginSelect.style.backgroundColor = '#F2F2F2';
+    sellerLoginSelect.textContent = '판매회원 로그인';
 
-    main.appendChild(purchaseLogin);
-    main.appendChild(registerLogin);
+    const loginForm = document.createElement('form');
+    formDefaultStyle(loginForm);
+
+    const iDInput = document.createElement('input');
+    inputDefaultStyle(iDInput);
+    iDInput.style.marginBottom = '6px';
+    iDInput.setAttribute('placeholder', '아이디');
+    
+    const pWInput = document.createElement('input');
+    inputDefaultStyle(pWInput);
+    pWInput.style.marginBottom = '36px';
+    pWInput.setAttribute('placeholder', '비밀번호');
+
+    const purchaserLoginButton = document.createElement('button');
+    buttonDefaultStyle(purchaserLoginButton);
+    purchaserLoginButton.textContent = '로그인';
+
+    const sellerLoginButton = document.createElement('button');
+    buttonDefaultStyle(sellerLoginButton);
+    sellerLoginButton.style.display = 'none';
+    sellerLoginButton.textContent = '로그인';
+
+    main.appendChild(purchaserLoginSelect);
+    main.appendChild(sellerLoginSelect);
+    main.appendChild(loginForm);
+    loginForm.appendChild(iDInput);
+    loginForm.appendChild(pWInput);
+    loginForm.appendChild(purchaserLoginButton);
+    loginForm.appendChild(sellerLoginButton);
 
     return main;
 };
