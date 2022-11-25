@@ -1,5 +1,5 @@
-import Header from "./header.js";
-import Main from "./main.js";
+import Header from "./Header.js";
+import Main from "./Main.js";
 
 const LoginPage = () => {
     const body = document.body;

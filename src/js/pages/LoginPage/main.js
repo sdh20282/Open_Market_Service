@@ -1,4 +1,4 @@
-import { selectorDefaultStyle, formDefaultStyle, inputDefaultStyle, buttonDefaultStyle } from '../../components/LoginPage/Layouts.js'
+import { selectorDefaultStyle, formDefaultStyle, inputDefaultStyle, buttonDefaultStyle } from '../../components/Layouts/LoginPageLayouts.js'
 
 const Main = () => {
     const main = document.createElement('main');
