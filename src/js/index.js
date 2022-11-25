@@ -1,5 +1,4 @@
-// index.js
-import { initRouter } from './router.js';
+import initRouter from './router.js';
 
 const initFont = () => {
     const font = document.createElement('link');
@@ -9,13 +8,15 @@ const initFont = () => {
 
     document.head.appendChild(font);
     document.body.style.fontFamily = "'Spoqa Han Sans Neo', 'sans-serif'";
-    
+
 }
 
 const $root = document.querySelector("#root");
 
 initFont();
 initRouter($root);
+
+
 
 // const $navigation = document.getElementById('navigation');
 

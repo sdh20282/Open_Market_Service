@@ -1,6 +1,6 @@
-import { selectorDefaultStyle, formDefaultStyle, inputDefaultStyle, buttonDefaultStyle } from '../../components/LoginPage/layouts.js'
+import { selectorDefaultStyle, formDefaultStyle, inputDefaultStyle, buttonDefaultStyle } from '../../components/LoginPage/Layouts.js'
 
-export default () => {
+const Main = () => {
     const main = document.createElement('main');
     main.style.width = '550px';
     main.style.margin = '0 auto';
@@ -53,4 +53,6 @@ export default () => {
     loginForm.appendChild(sellerLoginButton);
 
     return main;
-};
+}
+
+export default Main;

@@ -1,4 +1,4 @@
-export default () => {
+const Header = () => {
     const header = document.createElement('header');
     header.style.width = '550px';
     header.style.margin = '0 auto';
@@ -23,4 +23,6 @@ export default () => {
     title_link.appendChild(title_image);
 
     return header
-};
+}
+
+export default Header;
