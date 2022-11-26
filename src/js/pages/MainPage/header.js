@@ -1,12 +1,7 @@
-// import TopBarLogin from '../../components/TopBar/TopBarLogin.js'
-
 import { TopBarLogin } from '../../components/TopBars/TopBarLogin.js'
 
 const Header = () => {
-    const header = document.createElement('header');
-    TopBarLogin(header);
-
-    return header;
+    return TopBarLogin();
 }
 
 

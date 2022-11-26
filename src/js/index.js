@@ -8,7 +8,6 @@ const initFont = () => {
 
     document.head.appendChild(font);
     document.body.style.fontFamily = "'Spoqa Han Sans Neo', 'sans-serif'";
-
 }
 
 const $root = document.querySelector("#root");
