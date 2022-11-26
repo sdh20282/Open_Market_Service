@@ -1,11 +1,9 @@
 import Header from "./Header.js";
+import { BodyStyle } from "../../styles/pages/Share/BodyStyle.js";
 
 const MainPage = () => {
     const body = document.body;
-    body.style.margin = '0'
-    body.style.padding = '0'
-    body.style.fontSize = 'inherit'
-    body.style.fontWeight = 'inherit'
+    BodyStyle(body);
 
     const fragment = new DocumentFragment();
     fragment.appendChild(Header());

@@ -1,8 +1,8 @@
-import { titleStyle, linkStyle, imageStyle } from '../../styles/Logos/NormalLogoStyle.js'
+import { normalTitleStyle, linkStyle, imageStyle } from '../../styles/components/Logos/LogoStyle.js'
 
 const NormalLogo = () => {
     const title = document.createElement('h1');
-    titleStyle(title);
+    normalTitleStyle(title);
 
     const title_link = document.createElement('a');
     title_link.setAttribute('href', '/');

@@ -6,8 +6,4 @@ const containerStyle = (element) => {
     element.style.padding = '22px 0';
 }
 
-const searchFormStyle = (element) => {
-    
-}
-
 export { containerStyle };
