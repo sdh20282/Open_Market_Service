@@ -1,6 +1,6 @@
-import { anchorStyle } from "../../../styles/components/Anchors/CartAnchorStyle.js";
+import { anchorStyle } from "../../../styles/components/Anchors/LogoAnchorStyle.js";
 
-const CartAnchor = () => {
+const LogoAnchor = () => {
     const anchor = document.createElement('a');
     anchor.setAttribute('href', '/');
     anchorStyle(anchor);
@@ -8,4 +8,4 @@ const CartAnchor = () => {
     return anchor;
 }
 
-export { CartAnchor };
+export { LogoAnchor };

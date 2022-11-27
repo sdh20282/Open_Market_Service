@@ -1,12 +1,12 @@
 import { imageStyle } from '../../../styles/components/Images/DefaultImageStyle.js'
 
-const UserImage = () => {
+const LogoImage = () => {
     const image = document.createElement('img');
-    image.setAttribute('src', './src/images/login.png');
-    image.setAttribute('alt', '유저 이미지');
+    image.setAttribute('src', './src/images/Logo-hodu.png');
+    image.setAttribute('alt', '호두 쇼핑몰 홈페이지 로고');
     imageStyle(image);
 
     return image;
 }
 
-export { UserImage };
+export { LogoImage };

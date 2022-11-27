@@ -7,13 +7,15 @@ import initLoginPageScript from './scripts/LoginPage/LoginPageScript.js'
 
 
 const routes = [
-    { path: '/', component: MainPage, activeScript: MainPageScript },
-    // { path: '/', component: LoginPage, activeScript: initLoginPageScript },
+    // { path: '/', component: MainPage, activeScript: MainPageScript },
+    { path: '/', component: LoginPage, activeScript: initLoginPageScript },
     { path: '/login', component: LoginPage, activeScript: initLoginPageScript },
 ];
 
 const render = async (path, element) => {
     const _path = path ?? window.location.pathname;
+
+    console.log(_path);
 
     try {
         const page = routes.find(route => route.path === _path);

@@ -4,16 +4,16 @@ import { SearchBar } from '../SearchBar/SearchBar.js'
 import { NavBarLogin } from "../NavBars/NavBarLogin.js";
 
 const TopBarLogin = () => {
-    const conatiner = TopBarHeader();
+    const header = TopBarHeader();
     const logo = NormalLogo();
-    const search_form = SearchBar();
+    const form = SearchBar();
     const nav = NavBarLogin();
     
-    conatiner.appendChild(logo);
-    conatiner.appendChild(search_form);
-    conatiner.appendChild(nav);
+    header.appendChild(logo);
+    header.appendChild(form);
+    header.appendChild(nav);
 
-    return conatiner;
+    return header;
 }
 
 export { TopBarLogin };
