@@ -8,7 +8,7 @@ const LoginPage = () => {
 
     const fragment = new DocumentFragment();
     fragment.appendChild(Header());
-    fragment.appendChild(Main());
+    // fragment.appendChild(Main());
 
     return fragment;
 };
