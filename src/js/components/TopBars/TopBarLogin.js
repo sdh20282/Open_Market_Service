@@ -1,4 +1,4 @@
-import { TopBarHeader } from "../Tags/Header/TopBarHeader.js";
+import { TopBarHeader } from "../Tags/Headers/TopBarHeader.js";
 import { NormalLogo } from "../Logos/NormalLogo.js";
 import { SearchBar } from '../SearchBar/SearchBar.js'
 import { NavBarLogin } from "../NavBars/NavBarLogin.js";

@@ -1,4 +1,4 @@
-import { formStyle } from "../../../styles/components/Tags/Froms/SearchBarFormStyle.js";
+import { formStyle } from "../../../styles/components/Froms/SearchBarFormStyle.js";
 
 const SearchBarForm = () => {
     const form = document.createElement('form');

@@ -1,4 +1,4 @@
-import { imageStyle } from "../../../styles/components/Tags/Images/SearchBarImageStyle.js";
+import { imageStyle } from "../../../styles/components/Images/SearchBarImageStyle.js";
 
 const SearchBarImage = () => {
     const image = document.createElement('img');

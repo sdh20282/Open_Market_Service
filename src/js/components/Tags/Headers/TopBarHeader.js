@@ -1,4 +1,4 @@
-import { headerStyle } from "../../../styles/components/Tags/Header/TopBarHeaderStyle.js";
+import { headerStyle } from "../../../styles/components/Headers/TopBarHeaderStyle.js";
 
 const TopBarHeader = () => {
     const header = document.createElement('header');

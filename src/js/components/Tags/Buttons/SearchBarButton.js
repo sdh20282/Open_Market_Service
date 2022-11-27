@@ -1,4 +1,4 @@
-import { buttonStyle } from "../../../styles/components/Tags/Buttons/SearchBarButtonStyle.js";
+import { buttonStyle } from "../../../styles/components/Buttons/SearchBarButtonStyle.js";
 import { SearchBarImage } from "../Images/SearchBarImage.js";
 
 const SearchBarButton = () => {

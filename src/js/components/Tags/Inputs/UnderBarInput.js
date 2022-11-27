@@ -1,4 +1,4 @@
-import { inputStyle } from "../../../styles/components/Tags/Inputs/UnderBarInputStyle.js";
+import { inputStyle } from "../../../styles/components/Inputs/UnderBarInputStyle.js";
 
 const SearchBarInput = () => {
     const input = document.createElement('input');
