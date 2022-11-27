@@ -4,7 +4,7 @@ const DefaultLabel = () => {
     const label = document.createElement('label');
     IROnly(label);
     
-    return label
+    return label;
 }
 
 export { DefaultLabel };

@@ -1,10 +1,10 @@
 import { inputStyle } from "../../../styles/components/Inputs/UnderBarInputStyle.js";
 
-const SearchBarInput = () => {
+const UnderBarInput = () => {
     const input = document.createElement('input');
     inputStyle(input);
     
-    return input
+    return input;
 }
 
-export { SearchBarInput };
+export { UnderBarInput };

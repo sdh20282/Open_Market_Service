@@ -5,7 +5,7 @@ const SearchLabel = () => {
     label.setAttribute('for', 'search');
     label.textContent = '검색어 입력';
     
-    return label
+    return label;
 }
 
 export { SearchLabel };
