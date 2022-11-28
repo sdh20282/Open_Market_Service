@@ -2,7 +2,7 @@ import { buttonStyle } from "../../../styles/components/Buttons/SearchBarButtonS
 
 const SearchBarButton = () => {
     const button = document.createElement('button');
-    button.setAttribute('id', 'search');
+    button.setAttribute('id', 'searchButton');
     buttonStyle(button);
 
     return button;
