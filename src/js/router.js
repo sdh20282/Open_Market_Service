@@ -7,8 +7,8 @@ import initLoginPageScript from './scripts/LoginPage/LoginPageScript.js'
 
 
 const routes = [
-    { path: '/', component: MainPage, activeScript: MainPageScript },
-    // { path: '/', component: LoginPage, activeScript: initLoginPageScript },
+    // { path: '/', component: MainPage, activeScript: MainPageScript },
+    { path: '/', component: LoginPage, activeScript: initLoginPageScript },
     { path: '/login', component: LoginPage, activeScript: initLoginPageScript },
 ];
 

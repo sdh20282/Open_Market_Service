@@ -4,6 +4,7 @@ import { PurchaserTabButton } from "../../components/Tags/Buttons/PurchaserTabBu
 import { SellerTabButton } from "../../components/Tags/Buttons/SellerTabButton.js";
 import { LoginUser } from "../../components/UserInfos/LoginUser.js";
 import { LoginColorDiv } from "../../components/Tags/Divs/LoginColorDiv.js";
+import { NavBarRegister } from "../../components/NavBars/NavBarLoginPage.js";
 
 const Main = () => {
     const main = document.createElement('main');
@@ -13,6 +14,7 @@ const Main = () => {
     const sellerTab = SellerTabButton();
     const form = LoginUser();
     const div = LoginColorDiv();
+    const nav = NavBarRegister();
 
     main.appendChild(section);
     section.appendChild(sectionHeader);
@@ -20,6 +22,7 @@ const Main = () => {
     section.appendChild(sellerTab);
     section.appendChild(form);
     section.appendChild(div);
+    section.appendChild(nav);
 
     return main;
 }

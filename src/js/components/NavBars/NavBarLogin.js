@@ -1,11 +1,11 @@
-import { DefaultNav } from '../Tags/Navs/DefaultNav.js';
+import { TopBarNav } from '../Tags/Navs/TopBarNav.js';
 import { CartAnchor } from '../Tags/Anchors/CartAnchor.js';
 import { UserAnchor } from '../Tags/Anchors/UserAnchor.js';
 import { CartImage } from '../Tags/Images/CartImage.js';
 import { LoginImage } from '../Tags/Images/LoginImage.js';
 
 const NavBarLogin = () => {
-    const nav = DefaultNav();
+    const nav = TopBarNav();
     const cart_anchor = CartAnchor();
     const user_anchor = UserAnchor();
     const cart_image = CartImage();
