@@ -5,8 +5,8 @@ const formStyle = (element) => {
     element.style.borderRadius = '0 10px 10px 10px';
     element.style.backgroundColor = 'white';
     element.style.boxSizing = 'border-box';
-    element.style.position = 'absolute';
-    element.style.top = '59px';
+    element.style.position = 'relative';
+    element.style.top = '-1px';
     element.style.zIndex = '20';
 }
 

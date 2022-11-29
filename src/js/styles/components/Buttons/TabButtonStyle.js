@@ -8,7 +8,7 @@ const buttonStyle = (element) => {
     element.style.fontWeight = '500';
     element.style.fontFamily = "'Spoqa Han Sans Neo', 'sans-serif'";
     element.style.boxSizing = 'border-box';
-    element.style.position = 'absolute';
+    element.style.position = 'relative';
     element.style.cursor = 'pointer';
 }
 

@@ -5,8 +5,8 @@ const divStyle = (element) => {
     element.style.borderRight = '1px solid #C4C4C4';
     element.style.boxSizing = 'border-box';
     element.style.backgroundColor = '#F2F2F2';
-    element.style.position = 'absolute';
-    element.style.top = '60px';
+    element.style.position = 'relative';
+    element.style.top = '-294px';
 }
 
 export { divStyle };
