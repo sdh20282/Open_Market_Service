@@ -12,8 +12,8 @@ const preventFromEvent = () => {
     });
 }
 
-const initLoginPageScript = () => {
+const loginPageScript = () => {
     preventFromEvent();
 }
 
-export default initLoginPageScript;
+export default loginPageScript;

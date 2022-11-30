@@ -1,15 +1,20 @@
 import MainPage from './pages/MainPage/MainPage.js'
 import LoginPage from './pages/LoginPage/LoginPage.js'
+import RegisterPage from './pages/RegisterPage/RegisterPage.js'
 import NotFoundPage from './pages/NotFoundPage/main.js'
 
 import MainPageScript from './scripts/MainPage/MainPageScript.js'
-import initLoginPageScript from './scripts/LoginPage/LoginPageScript.js'
+import loginPageScript from './scripts/LoginPage/LoginPageScript.js'
+import RegisterPageScript from './scripts/RegisterPage/RegisterPageScript.js'
 
 
 const routes = [
     // { path: '/', component: MainPage, activeScript: MainPageScript },
-    { path: '/', component: LoginPage, activeScript: initLoginPageScript },
-    { path: '/login', component: LoginPage, activeScript: initLoginPageScript },
+    // { path: '/login', component: LoginPage, activeScript: loginPageScript },
+    // { path: '/register', component: RegisterPage, activeScript: RegisterPageScript },
+
+    { path: '/', component: RegisterPage, activeScript: RegisterPageScript },
+    // { path: '/', component: LoginPage, activeScript: RegisterPageScript },
 ];
 
 const render = async (path, element) => {
@@ -25,9 +30,9 @@ const render = async (path, element) => {
             return;
         }
 
-        element.replaceChildren(page.component());
-        initLinks();
-        page.activeScript();
+        element.replaceChildren(await page.component());
+        await initLinks();
+        await page.activeScript();
     } catch (err) {
         console.error(err);
     }

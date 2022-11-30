@@ -1,9 +1,9 @@
 import { UnderBarInput } from "./UnderBarInput.js";
 import { inputStyle } from "../../../styles/components/Inputs/IdInputStyle.js";
 
-const IdInput = () => {
+const LoginPageIdInput = () => {
     const input = UnderBarInput();
-    input.setAttribute('id', 'idInput');
+    input.setAttribute('id', 'loginIDInput');
     input.setAttribute('type', 'text');
     input.setAttribute('placeholder', '아이디');
     inputStyle(input);
@@ -11,4 +11,4 @@ const IdInput = () => {
     return input;
 }
 
-export { IdInput };
+export { LoginPageIdInput };

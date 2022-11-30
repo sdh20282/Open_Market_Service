@@ -2,7 +2,7 @@ import { anchorStyle } from "../../../styles/components/Anchors/FindRegisterAnch
 
 const RegisterAnchor = () => {
     const anchor = document.createElement('a');
-    anchor.setAttribute('href', '/');
+    anchor.setAttribute('href', '/register');
     anchor.textContent = '회원가입';
     anchorStyle(anchor);
 

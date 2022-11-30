@@ -1,9 +1,9 @@
 import { UnderBarInput } from "./UnderBarInput.js";
 import { inputStyle } from "../../../styles/components/Inputs/PasswordInputStyle.js";
 
-const PasswordInput = () => {
+const LoginPagePasswordInput = () => {
     const input = UnderBarInput();
-    input.setAttribute('id', 'passwordInput');
+    input.setAttribute('id', 'loginPWInput');
     input.setAttribute('type', 'password');
     input.setAttribute('placeholder', '비밀번호');
     inputStyle(input);
@@ -11,4 +11,4 @@ const PasswordInput = () => {
     return input;
 }
 
-export { PasswordInput };
+export { LoginPagePasswordInput };

@@ -4,6 +4,7 @@ import { buttonStyle } from "../../../styles/components/Buttons/PurchaserTabButt
 const PurchaserTabButton = () => {
     const button = TabButton();
     buttonStyle(button);
+    button.setAttribute('id', 'selectPurchaser');
     button.textContent = '구매회원 로그인';
 
     return button;

@@ -1,17 +1,17 @@
-import { LoginFrom } from "../Tags/Forms/LoginFrom.js";
-import { IdLabel } from "../Tags/Labels/IdLabel.js";
-import { IdInput } from "../Tags/Inputs/IdInput.js";
-import { PasswordLabel } from "../Tags/Labels/PasswordLabel.js";
-import { PasswordInput } from "../Tags/Inputs/PasswordInput.js";
+import { InputFrom } from "../Tags/Forms/InputFrom.js";
+import { LoginPageIdLabel } from "../Tags/Labels/LoginPageIdLabel.js";
+import { LoginPageIdInput } from "../Tags/Inputs/LoginPageIdInput.js";
+import { LoginPagePasswordLabel } from "../Tags/Labels/LoginPagePasswordLabel.js";
+import { LoginPagePasswordInput } from "../Tags/Inputs/LoginPagePasswordInput.js";
 import { PurchaserLoginButton } from "../Tags/Buttons/PurchaserLoginButton.js";
 import { SellerLoginButton } from "../Tags/Buttons/SellerLoginButton.js";
 
 const LoginUser = () => {
-    const form = LoginFrom();
-    const id_label = IdLabel();
-    const id_input = IdInput();
-    const pw_label = PasswordLabel();
-    const pw_input = PasswordInput();
+    const form = InputFrom();
+    const id_label = LoginPageIdLabel();
+    const id_input = LoginPageIdInput();
+    const pw_label = LoginPagePasswordLabel();
+    const pw_input = LoginPagePasswordInput();
     const purchaser_login_button = PurchaserLoginButton();
     const seller_login_button = SellerLoginButton();
 
