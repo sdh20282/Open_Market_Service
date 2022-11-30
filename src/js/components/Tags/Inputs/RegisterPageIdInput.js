@@ -1,7 +1,7 @@
 import { BoxInput } from "./BoxInput.js";
-import { inputStyle } from "../../../styles/components/Inputs/RdgisterPageIdInputStyle.js";
+import { inputStyle } from "../../../styles/components/Inputs/RegisterPageIdInputStyle.js";
 
-const RdgisterPageIdInput = () => {
+const RegisterPageIdInput = () => {
     const input = BoxInput();
     input.setAttribute('id', 'registerIDInput');
     inputStyle(input);
@@ -9,4 +9,4 @@ const RdgisterPageIdInput = () => {
     return input;
 }
 
-export { RdgisterPageIdInput };
+export { RegisterPageIdInput };
