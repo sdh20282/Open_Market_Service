@@ -38,6 +38,8 @@ const RegisterUser = () => {
     form.appendChild(mail_label);
 
 
+    
+
     return form;
 }
 
