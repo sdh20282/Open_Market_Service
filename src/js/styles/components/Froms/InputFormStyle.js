@@ -1,5 +1,5 @@
 const formStyle = (element) => {
-    element.style.width = '550px';
+    element.style.width = 'fit-content';
     element.style.padding = '34px';
     element.style.border = '1px solid #C4C4C4';
     element.style.borderRadius = '0 10px 10px 10px';

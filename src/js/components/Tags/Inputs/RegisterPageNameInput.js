@@ -1,5 +1,5 @@
 import { BoxInput } from "./BoxInput.js";
-import { inputStyle } from "../../../styles/components/Inputs/RegisterPagePWInputStyle.js";
+import { inputStyle } from "../../../styles/components/Inputs/RegisterPageNameInputStyle.js";
 
 const RegisterPageNameInput = () => {
     const input = BoxInput();
