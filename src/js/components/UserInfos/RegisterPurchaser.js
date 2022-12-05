@@ -21,15 +21,19 @@ import { RegisterPageNameLabel } from "../Tags/Labels/RegisterPageNameLabel.js";
 import { RegisterPageNameInput } from "../Tags/Inputs/RegisterPageNameInput.js";
 
 // phone
-import { RegisterPagePhoneLabel } from "../Tags/Labels/RegisterPagePhoneLabel.js";
+import { RegisterPagePhoneParagraph } from "../Tags/Paragraphs/RegisterPagePhoneParagraph.js";
 import { PhoneSelectBox } from "../SelectBox/PhoneSelectBox.js";
+import { RegisterPagePhoneMiddleLabel } from "../Tags/Labels/RegisterPagePhoneMiddleLabel.js";
 import { RegisterPagePhoneMiddleInput } from "../Tags/Inputs/RegisterPagePhoneMiddleInput.js";
+import { RegisterPagePhoneTailLabel } from "../Tags/Labels/RegisterPagePhoneTailLabel.js";
 import { RegisterPagePhoneTailInput } from "../Tags/Inputs/RegisterPagePhoneTailInput.js";
 
 // mail
-import { RegisterPageMailLabel } from "../Tags/Labels/RegisterPageMailLabel.js";
+import { RegisterPageEmailParagraph } from "../Tags/Paragraphs/RegisterPageEmailParagraph.js";
+import { RegisterPageEmailIdLabel } from "../Tags/Labels/RegisterPageEmailIDLabel.js";
 import { RegisterPageEmailIDInput } from "../Tags/Inputs/RegisterPageEmailIDInput.js";
 import { AtSignSpan } from "../Tags/Spans/AtSignSpan.js";
+import { RegisterPageEmailDomainLabel } from "../Tags/Labels/RegisterPageEmailDomainLabel.js";
 import { RegisterPageEmailDomainInput } from "../Tags/Inputs/RegisterPageEmailDomainInput.js";
 
 const RegisterPurchaser = () => {
@@ -57,15 +61,19 @@ const RegisterPurchaser = () => {
     const name_input = RegisterPageNameInput();
 
     // phone
-    const phone_label = RegisterPagePhoneLabel();
+    const phone_paragraph = RegisterPagePhoneParagraph();
     const phone_first = PhoneSelectBox();
+    const phone_middle_label = RegisterPagePhoneMiddleLabel();
     const phone_middle = RegisterPagePhoneMiddleInput();
+    const phone_tail_label = RegisterPagePhoneTailLabel();
     const phone_tail = RegisterPagePhoneTailInput();
 
     // mail
-    const mail_label = RegisterPageMailLabel();
+    const mail_paragraph = RegisterPageEmailParagraph();
+    const mail_id_label = RegisterPageEmailIdLabel();
     const mail_id = RegisterPageEmailIDInput();
     const mail_at = AtSignSpan();
+    const mail_domain_label = RegisterPageEmailDomainLabel();
     const mail_domain = RegisterPageEmailDomainInput();
 
     
@@ -78,13 +86,17 @@ const RegisterPurchaser = () => {
     form.appendChild(pw_check_div);
     form.appendChild(name_label);
     form.appendChild(name_input);
-    form.appendChild(phone_label);
+    form.appendChild(phone_paragraph);
     form.appendChild(phone_first);
+    form.appendChild(phone_middle_label);
     form.appendChild(phone_middle);
+    form.appendChild(phone_tail_label);
     form.appendChild(phone_tail);
-    form.appendChild(mail_label);
+    form.appendChild(mail_paragraph);
+    form.appendChild(mail_id_label);
     form.appendChild(mail_id);
     form.appendChild(mail_at);
+    form.appendChild(mail_domain_label);
     form.appendChild(mail_domain);
 
     pw_div.appendChild(pw_input);

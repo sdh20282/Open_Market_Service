@@ -8,6 +8,7 @@ const formStyle = (element) => {
     element.style.position = 'relative';
     element.style.top = '-1px';
     element.style.zIndex = '20';
+    element.style.marginBottom = '34px';
 }
 
 export { formStyle };
