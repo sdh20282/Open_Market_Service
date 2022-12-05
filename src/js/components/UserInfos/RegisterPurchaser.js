@@ -22,7 +22,7 @@ import { RegisterPageNameInput } from "../Tags/Inputs/RegisterPageNameInput.js";
 
 // phone
 import { RegisterPagePhoneLabel } from "../Tags/Labels/RegisterPagePhoneLabel.js";
-import { PhoneSelect } from "../Tags/Selects/PhoneSelect.js";
+import { PhoneSelectBox } from "../SelectBox/PhoneSelectBox.js";
 import { RegisterPagePhoneMiddleInput } from "../Tags/Inputs/RegisterPagePhoneMiddleInput.js";
 import { RegisterPagePhoneTailInput } from "../Tags/Inputs/RegisterPagePhoneTailInput.js";
 
@@ -58,7 +58,7 @@ const RegisterPurchaser = () => {
 
     // phone
     const phone_label = RegisterPagePhoneLabel();
-    const phone_first = PhoneSelect();
+    const phone_first = PhoneSelectBox();
     const phone_middle = RegisterPagePhoneMiddleInput();
     const phone_tail = RegisterPagePhoneTailInput();
 
@@ -91,6 +91,8 @@ const RegisterPurchaser = () => {
     pw_div.appendChild(pw_image);
     pw_check_div.appendChild(pw_check_input);
     pw_check_div.appendChild(pw_check_image);
+
+    // form.scroll
 
     return form;
 }
