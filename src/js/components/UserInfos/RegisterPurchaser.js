@@ -35,28 +35,34 @@ import { RegisterPageEmailDomainInput } from "../Tags/Inputs/RegisterPageEmailDo
 const RegisterPurchaser = () => {
     const form = InputFrom();
 
+    // id
     const id_label = RegisterPageIdLabel();
     const id_input = RegisterPageIdInput();
     const id_button = IdDuplicationCheckButton();
 
+    // pw
     const pw_label = RegisterPagePWLabel();
     const pw_div = CheckImageDiv();
     const pw_input = RegisterPagePWInput();
     const pw_image = PWCheckOffImage();
 
+    // pw confirm
     const pw_check_label = RegisterPagePWCheckLabel();
     const pw_check_div = CheckImageDiv();
     const pw_check_input = RegisterPagePWCheckInput();
     const pw_check_image = PWConfirmCheckOffImage();
 
+    // name
     const name_label = RegisterPageNameLabel();
     const name_input = RegisterPageNameInput();
 
+    // phone
     const phone_label = RegisterPagePhoneLabel();
     const phone_first = PhoneSelect();
     const phone_middle = RegisterPagePhoneMiddleInput();
     const phone_tail = RegisterPagePhoneTailInput();
 
+    // mail
     const mail_label = RegisterPageMailLabel();
     const mail_id = RegisterPageEmailIDInput();
     const mail_at = AtSignSpan();
