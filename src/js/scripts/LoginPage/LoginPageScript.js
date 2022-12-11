@@ -12,7 +12,7 @@ const preventFromEvent = () => {
     });
 }
 
-const loginPageScript = () => {
+const loginPageScript = async () => {
     preventFromEvent();
 }
 

@@ -31,6 +31,7 @@ const render = async (path, element) => {
         }
 
         element.replaceChildren(await page.component());
+        console.log(document.querySelector('h2'));
         await initLinks();
         await page.activeScript();
     } catch (err) {

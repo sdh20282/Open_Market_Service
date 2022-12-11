@@ -1,8 +1,8 @@
-import { PhoneListItem } from "./PhoneListItem.js";
+import { PhoneSelectItemButton_011 } from "../Buttons/PhoneSelectItemButton_011.js";
 
 const PhoneListItem_011 = () => {
-    const li = PhoneListItem();
-    li.textContent = '011';
+    const li = document.createElement('li');
+    li.appendChild(PhoneSelectItemButton_011());
 
     return li;
 }

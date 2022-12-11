@@ -2,7 +2,7 @@ import Header from "./Header.js";
 import Main from "./Main.js";
 import { BodyStyle } from "../../styles/pages/Share/BodyStyle.js";
 
-const LoginPage = () => {
+const LoginPage = async () => {
     const body = document.body;
     BodyStyle(body);
 

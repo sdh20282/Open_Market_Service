@@ -6,7 +6,7 @@ const preventFromEvent = () => {
     });
 }
 
-const MainPageScript = () => {
+const MainPageScript = async () => {
     preventFromEvent();
 }
 

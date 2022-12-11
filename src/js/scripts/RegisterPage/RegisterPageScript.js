@@ -6,7 +6,7 @@ const preventFromEvent = () => {
     });
 }
 
-const RegisterPageScript = () => {
+const RegisterPageScript = async () => {
     preventFromEvent();
 }
 
