@@ -5,23 +5,32 @@ const PhoneSelectUl = () => {
     ulStyle(ul);
     ul.setAttribute('id', 'PhoneSelectUl');
 
-    // document.styleSheets.length = 2
-    // console.log(document.styleSheets);
-
-    setTimeout(() => {
-        console.log(document.styleSheets);
-        document.styleSheets[0].insertRule('#PhoneSelectUl::-webkit-scrollbar { display: none }', 0);
-        document.styleSheets[0].cssRules[0].style.display = 'none';
-    }, 100);
-
-
-
-    // let i = document.styleSheets.length;
-    // let ss = document.styleSheets[0];
-    // console.log(ss);
-    // let l = ss.cssRules.length;
-
-    // ss.insertRule('#PhoneSelectUl::-webkit-scrollbar { display: none }', l);
+    const cssTemplateString = `
+    #PhoneSelectUl::-webkit-scrollbar { 
+        width: 18px;
+        background-color: #F2F2F2;
+        border-radius: 0 5px 5px 0;
+    }
+    
+    #PhoneSelectUl::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    
+    #PhoneSelectUl::-webkit-scrollbar-thumb {
+        background: #C4C4C4;
+        border-radius: 10px;
+        background-clip: padding-box;
+        border: 6px solid transparent;
+    }
+    
+    #PhoneSelectUl::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+    }`;
+    
+    const styleTag = document.createElement("style");
+    styleTag.innerHTML = cssTemplateString;
+    document.head.insertAdjacentElement('beforeend', styleTag);
 
     return ul;
 }

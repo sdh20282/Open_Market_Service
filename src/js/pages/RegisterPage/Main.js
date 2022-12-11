@@ -34,9 +34,6 @@ const Main = () => {
     agree_div.appendChild(agree_input);
     agree_div.appendChild(agree_label);
 
-    // main.style.alignItems
-
-
     return main;
 }
 
