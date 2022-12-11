@@ -9,12 +9,9 @@ import RegisterPageScript from './scripts/RegisterPage/RegisterPageScript.js'
 
 
 const routes = [
-    // { path: '/', component: MainPage, activeScript: MainPageScript },
-    // { path: '/login', component: LoginPage, activeScript: loginPageScript },
-    // { path: '/register', component: RegisterPage, activeScript: RegisterPageScript },
-
-    { path: '/', component: RegisterPage, activeScript: RegisterPageScript },
-    // { path: '/', component: LoginPage, activeScript: RegisterPageScript },
+    { path: '/', component: MainPage, activeScript: MainPageScript },
+    { path: '/login', component: LoginPage, activeScript: loginPageScript },
+    { path: '/register', component: RegisterPage, activeScript: RegisterPageScript },
 ];
 
 const render = async (path, element) => {
