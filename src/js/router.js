@@ -37,6 +37,15 @@ const render = async (path, element) => {
 };
 
 const initRouter = (element) => {
+    // navigation.addEventListener('click', e => {
+    //     // server 요청을 막기위해 preventDefault 호출
+    //     e.preventDefault();
+
+    //     const path = e.target.getAttribute('href');
+    //     window.history.pushState({}, null, path);
+    //     render(path);
+    // });
+
     window.addEventListener('popstate', () => {
         render(undefined, element);
     });
