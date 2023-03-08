@@ -9,15 +9,14 @@ import RegisterPageScript from './scripts/RegisterPage/RegisterPageScript.js'
 
 
 const routes = [
-    { path: '/', component: MainPage, activeScript: MainPageScript },
+    // { path: '/', component: MainPage, activeScript: MainPageScript },
+    { path: '/', component: LoginPage, activeScript: loginPageScript },
     { path: '/login', component: LoginPage, activeScript: loginPageScript },
     { path: '/register', component: RegisterPage, activeScript: RegisterPageScript },
 ];
 
 const render = async (path, element) => {
     const _path = path ?? window.location.pathname;
-
-    console.log(_path);
 
     try {
         const page = routes.find(route => route.path === _path);
@@ -28,7 +27,6 @@ const render = async (path, element) => {
         }
 
         element.replaceChildren(await page.component());
-        console.log(document.querySelector('h2'));
         await initLinks();
         await page.activeScript();
     } catch (err) {

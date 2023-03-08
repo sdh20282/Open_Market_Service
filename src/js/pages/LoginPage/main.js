@@ -1,3 +1,4 @@
+import { MainMB100 } from "../../components/Tags/Mains/MainMB100.js";
 import { InputSection } from "../../components/Tags/Sections/InputSection.js";
 import { InputSectionHeader } from "../../components/Tags/Headers/InputSectionHeader.js";
 import { PurchaserTabButton } from "../../components/Tags/Buttons/PurchaserTabButton.js";
@@ -7,7 +8,7 @@ import { LoginColorDiv } from "../../components/Tags/Divs/LoginColorDiv.js";
 import { NavBarRegister } from "../../components/NavBars/NavBarLoginPage.js";
 
 const Main = () => {
-    const main = document.createElement('main');
+    const main = MainMB100();
     const section = InputSection();
     const sectionHeader = InputSectionHeader();
     const purchaserTab = PurchaserTabButton();
