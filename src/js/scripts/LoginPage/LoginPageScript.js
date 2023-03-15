@@ -104,6 +104,12 @@ const tryLogin = (state) => {
 }
 
 const loginPageScript = async (state) => {
+    if (state.getToken()) {
+        moveLink("/", state);
+
+        return;
+    }
+
     preventFromEvent();
     initSelectTab();
     initCheckInput();
