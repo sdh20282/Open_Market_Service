@@ -10,7 +10,7 @@ const preventFromEvent = () => {
     });
 }
 
-const selectTab = () => {
+const initSelectTab = () => {
     const $purchaserTab = document.querySelector('#selectPurchaser');
     const $sellerTab = document.querySelector('#selectSeller');
     const $form = document.querySelector('form');
@@ -34,7 +34,7 @@ const selectTab = () => {
     });
 }
 
-const checkInput = () => {
+const initCheckInput = () => {
     const $form = document.querySelector('form');
     const $loginIDInput = $form.querySelector('#loginIDInput');
     const $loginPWInput = $form.querySelector('#loginPWInput');
@@ -104,9 +104,9 @@ const tryLogin = (state) => {
 }
 
 const loginPageScript = async (state) => {
-    selectTab();
     preventFromEvent();
-    checkInput();
+    initSelectTab();
+    initCheckInput();
     tryLogin(state);
 }
 
