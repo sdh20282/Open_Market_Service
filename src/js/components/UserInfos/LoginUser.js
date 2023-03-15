@@ -13,7 +13,7 @@ import { LoginPageNotValidParagraph } from "../Tags/Paragraphs/LoginPageNotValid
 import { LoginPageEmptyParagraph } from "../Tags/Paragraphs/LoginPageEmptyParagraph.js";
 
 // button
-import { PurchaserLoginButton } from "../Tags/Buttons/PurchaserLoginButton.js";
+import { LoginButton } from "../Tags/Buttons/LoginButton.js";
 
 const LoginUser = () => {
     const form = InputFrom();
@@ -23,7 +23,7 @@ const LoginUser = () => {
     const pw_input = LoginPagePasswordInput();
     const notValid_paragraph = LoginPageNotValidParagraph();
     const empty_paragraph = LoginPageEmptyParagraph();
-    const purchaser_login_button = PurchaserLoginButton();
+    const login_button = LoginButton();
 
     form.appendChild(id_label);
     form.appendChild(id_input);
@@ -31,7 +31,7 @@ const LoginUser = () => {
     form.appendChild(pw_input);
     form.appendChild(notValid_paragraph);
     form.appendChild(empty_paragraph);
-    form.appendChild(purchaser_login_button);
+    form.appendChild(login_button);
 
     return form;
 }

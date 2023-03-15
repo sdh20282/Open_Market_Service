@@ -5,7 +5,7 @@ import { PurchaserTabButton } from "../../components/Tags/Buttons/PurchaserTabBu
 import { SellerTabButton } from "../../components/Tags/Buttons/SellerTabButton.js";
 import { RegisterPurchaser } from "../../components/UserInfos/RegisterPurchaser.js";
 import { LoginColorDiv } from "../../components/Tags/Divs/LoginColorDiv.js";
-import { PurchaserRegisterButton } from "../../components/Tags/Buttons/PurchaserRegisterButton.js";
+import { RegisterButton } from "../../components/Tags/Buttons/RegisterButton.js";
 import { RegisterPageAgreeDiv } from "../../components/Tags/Divs/RegisterPageAgreeDiv.js";
 import { RegisterPageAgreeInput } from "../../components/Tags/Inputs/RegisterPageAgreeInput.js";
 import { RegisterPageAgreeLabel } from "../../components/Tags/Labels/RegisterPageAgreeLabel.js";
@@ -21,7 +21,7 @@ const Main = () => {
     const agree_div = RegisterPageAgreeDiv();
     const agree_input = RegisterPageAgreeInput();
     const agree_label = RegisterPageAgreeLabel();
-    const button = PurchaserRegisterButton();
+    const button = RegisterButton();
 
     main.appendChild(section);
     section.appendChild(sectionHeader);

@@ -1,7 +1,7 @@
 import { GreenButton } from "./GreenButton.js";
-import { buttonStyle } from "../../../styles/components/Buttons/PurchaserLoginButtonStyle.js";
+import { buttonStyle } from "../../../styles/components/Buttons/LoginButtonStyle.js";
 
-const PurchaserLoginButton = () => {
+const LoginButton = () => {
     const button = GreenButton();
     buttonStyle(button);
     button.setAttribute('id', 'loginButton');
@@ -10,4 +10,4 @@ const PurchaserLoginButton = () => {
     return button;
 }
 
-export { PurchaserLoginButton };
+export { LoginButton };
