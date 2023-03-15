@@ -1,4 +1,5 @@
 import initRouter from './router.js';
+import State from './scripts/StateManagement/State.js';
 
 const initFont = () => {
     const font = document.createElement('link');
@@ -11,9 +12,12 @@ const initFont = () => {
 }
 
 const $root = document.querySelector("#root");
+const state = new State();
 
 initFont();
-initRouter($root);
+initRouter($root, state);
+
+
 
 
 

@@ -6,8 +6,10 @@ const preventFromEvent = () => {
     });
 }
 
-const MainPageScript = async () => {
+const MainPageScript = async (state) => {
     preventFromEvent();
+
+    console.log(state.getToken());
 }
 
 export default MainPageScript;

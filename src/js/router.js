@@ -15,7 +15,7 @@ const routes = [
     { path: '/register', component: RegisterPage, activeScript: RegisterPageScript },
 ];
 
-const render = async (path, element) => {
+const render = async (path, element, state) => {
     const _path = path ?? window.location.pathname;
 
     try {
@@ -26,15 +26,15 @@ const render = async (path, element) => {
             return;
         }
 
-        element.replaceChildren(await page.component());
-        await initLinks();
-        await page.activeScript();
+        element.replaceChildren(await page.component(state));
+        await initLinks(state);
+        await page.activeScript(state);
     } catch (err) {
         console.error(err);
     }
 };
 
-const initRouter = (element) => {
+const initRouter = (element, state) => {
     // navigation.addEventListener('click', e => {
     //     // server 요청을 막기위해 preventDefault 호출
     //     e.preventDefault();
@@ -45,16 +45,22 @@ const initRouter = (element) => {
     // });
 
     window.addEventListener('popstate', () => {
-        render(undefined, element);
+        render(undefined, element, state);
     });
 
     window.addEventListener('DOMContentLoaded', () => {
-        render(undefined, element);
+        render(undefined, element, state);
     });
 }
 
-const initLinks = async () => {
+const moveLink = async (pathName, state) => {
+    window.history.pushState({}, pathName, window.location.origin + pathName);
+    render(pathName, document.querySelector("#root"), state);
+}
+
+const initLinks = async (state) => {
     document.querySelectorAll('a').forEach((item) => {
+
         item.addEventListener('click', (event) => {
             event.preventDefault();
 
@@ -62,10 +68,10 @@ const initLinks = async () => {
 
             if (window.location.pathname === pathName) return;
 
-            window.history.pushState({}, pathName, window.location.origin + pathName);
-            render(pathName, document.querySelector("#root"));
+            moveLink(pathName, state);
         })
-    })
+    });
 }
 
 export default initRouter;
+export { moveLink };
