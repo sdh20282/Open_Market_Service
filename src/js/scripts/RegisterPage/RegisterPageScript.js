@@ -1,4 +1,4 @@
-const url = 'https://openmarket.weniv.co.kr/';
+import FetchTemplate from "../utils/FetchTemplate.js";
 
 let purchaserSelected = true;
 let idChecked = false;
@@ -35,7 +35,7 @@ const initSelectTab = () => {
     });
 }
 
-const initDuplicateCheck = () => {
+const initDuplicateCheck = (state) => {
     const $form = document.querySelector('form');
     const $input = $form.querySelector('#registerIDInput');
     const $button = $form.querySelector('#checkDuplication');
@@ -51,11 +51,11 @@ const initDuplicateCheck = () => {
         }
 
         try {
-            const response = await fetch(url + 'accounts/signup/valid/username/', {
+            const response = await FetchTemplate({
+                state: state,
+                path: 'accounts/signup/valid/username/',
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                needToken: false,
                 body: JSON.stringify({
                     "username": $input.value,
                 })
@@ -83,7 +83,7 @@ const initDuplicateCheck = () => {
 const RegisterPageScript = async (state) => {
     preventFromEvent();
     initSelectTab();
-    initDuplicateCheck();
+    initDuplicateCheck(state);
 }
 
 export default RegisterPageScript;

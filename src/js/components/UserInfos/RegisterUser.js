@@ -7,10 +7,11 @@ import { IROnlyLegend } from "../Tags/Legend/irOnlyLegend.js";
 import { RegisterPageIdLabel } from "../Tags/Labels/RegisterPageIdLabel.js";
 import { RegisterPageIdInput } from "../Tags/Inputs/RegisterPageIdInput.js";
 import { IdDuplicationCheckButton } from "../Tags/Buttons/IdDuplicationCheckButton.js";
+import { RegisterPageIDValidParagraph } from "../Tags/Paragraphs/RegisterPageIDValidParagraph.js";
+import { RegisterPageIDInValidParagraph } from "../Tags/Paragraphs/RegisterPageIDInvalidParagraph.js";
 
 // pw
 import { RegisterPagePWLabel } from "../Tags/Labels/RegisterPagePWLabel.js";
-import { CheckImageDiv } from "../Tags/Divs/checkImageDiv.js";
 import { RegisterPagePWInput } from "../Tags/Inputs/RegisterPagePWInput.js";
 import { PWCheckOffImage } from "../Tags/Images/PWCheckOffImage.js";
 
@@ -48,6 +49,8 @@ const RegisterUser = () => {
     const id_label = RegisterPageIdLabel();
     const id_input = RegisterPageIdInput();
     const id_button = IdDuplicationCheckButton();
+    const id_valid = RegisterPageIDValidParagraph();
+    const id_invalid = RegisterPageIDInValidParagraph();
 
     // pw
     const pw_field = EmptyFieldSet();
@@ -97,8 +100,6 @@ const RegisterUser = () => {
     phone_legend.textContent = '전화번호 입력 영역';
     mail_legend.textContent = '이메일 입력 영역';
 
-    // append elements
-
     // form
     form.appendChild(id_field);
     form.appendChild(pw_field);
@@ -112,6 +113,8 @@ const RegisterUser = () => {
     id_field.appendChild(id_label);
     id_field.appendChild(id_input);
     id_field.appendChild(id_button);
+    id_field.appendChild(id_valid);
+    id_field.appendChild(id_invalid);
 
     // pw_field
     pw_field.appendChild(pw_legend);

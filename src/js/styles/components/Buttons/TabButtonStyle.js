@@ -10,9 +10,6 @@ const buttonStyle = (element) => {
     element.style.boxSizing = 'border-box';
     element.style.position = 'relative';
     element.style.cursor = 'pointer';
-    // element.style.display = 'flex';
-    // element.style.justifyContent = 'center';
-    // element.style.paddingTop = '20px';
 }
 
 export { buttonStyle };

@@ -1,3 +1,4 @@
+import FetchTemplate from "../utils/FetchTemplate.js";
 import { moveLink } from "../../router.js";
 
 let purchaserSelected = true;
@@ -75,17 +76,18 @@ const tryLogin = (state) => {
         }
 
         try {
-            const response = await fetch(url + 'accounts/login/', {
+            const response = await FetchTemplate({
+                state: state,
+                path: 'accounts/login/',
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                needToken: false,
                 body: JSON.stringify({
                     "username": $loginIDInput.value,
                     "password": $loginPWInput.value,
                     "login_type": purchaserSelected ? "BUYER" : "SELLER",
-                }),
+                })
             });
+            
             const result = await response.json();
 
             if (result.FAIL_Message) {
