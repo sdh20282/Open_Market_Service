@@ -1,5 +1,8 @@
 import { InputFrom } from "../Tags/Forms/InputFrom.js";
 
+import { EmptyFieldSet } from "../Tags/FieldSet/EmptyFieldSet.js";
+import { IROnlyLegend } from "../Tags/Legend/irOnlyLegend.js";
+
 // id
 import { RegisterPageIdLabel } from "../Tags/Labels/RegisterPageIdLabel.js";
 import { RegisterPageIdInput } from "../Tags/Inputs/RegisterPageIdInput.js";
@@ -36,31 +39,39 @@ import { AtSignSpan } from "../Tags/Spans/AtSignSpan.js";
 import { RegisterPageEmailDomainLabel } from "../Tags/Labels/RegisterPageEmailDomainLabel.js";
 import { RegisterPageEmailDomainInput } from "../Tags/Inputs/RegisterPageEmailDomainInput.js";
 
-const RegisterPurchaser = () => {
+const RegisterUser = () => {
     const form = InputFrom();
 
     // id
+    const id_field = EmptyFieldSet();
+    const id_legend = IROnlyLegend();
     const id_label = RegisterPageIdLabel();
     const id_input = RegisterPageIdInput();
     const id_button = IdDuplicationCheckButton();
 
     // pw
+    const pw_field = EmptyFieldSet();
+    const pw_legend = IROnlyLegend();
     const pw_label = RegisterPagePWLabel();
-    const pw_div = CheckImageDiv();
     const pw_input = RegisterPagePWInput();
     const pw_image = PWCheckOffImage();
 
     // pw confirm
+    const pw_check_field = EmptyFieldSet();
+    const pw_check_legend = IROnlyLegend();
     const pw_check_label = RegisterPagePWCheckLabel();
-    const pw_check_div = CheckImageDiv();
     const pw_check_input = RegisterPagePWCheckInput();
     const pw_check_image = PWConfirmCheckOffImage();
 
     // name
+    const name_field = EmptyFieldSet();
+    const name_legend = IROnlyLegend();
     const name_label = RegisterPageNameLabel();
     const name_input = RegisterPageNameInput();
 
     // phone
+    const phone_field = EmptyFieldSet();
+    const phone_legend = IROnlyLegend();
     const phone_paragraph = RegisterPagePhoneParagraph();
     const phone_first = PhoneSelectBox();
     const phone_middle_label = RegisterPagePhoneMiddleLabel();
@@ -69,6 +80,8 @@ const RegisterPurchaser = () => {
     const phone_tail = RegisterPagePhoneTailInput();
 
     // mail
+    const mail_field = EmptyFieldSet();
+    const mail_legend = IROnlyLegend();
     const mail_paragraph = RegisterPageEmailParagraph();
     const mail_id_label = RegisterPageEmailIdLabel();
     const mail_id = RegisterPageEmailIDInput();
@@ -76,37 +89,66 @@ const RegisterPurchaser = () => {
     const mail_domain_label = RegisterPageEmailDomainLabel();
     const mail_domain = RegisterPageEmailDomainInput();
 
-    
-    form.appendChild(id_label);
-    form.appendChild(id_input);
-    form.appendChild(id_button);
-    form.appendChild(pw_label);
-    form.appendChild(pw_div);
-    form.appendChild(pw_check_label);
-    form.appendChild(pw_check_div);
-    form.appendChild(name_label);
-    form.appendChild(name_input);
-    form.appendChild(phone_paragraph);
-    form.appendChild(phone_first);
-    form.appendChild(phone_middle_label);
-    form.appendChild(phone_middle);
-    form.appendChild(phone_tail_label);
-    form.appendChild(phone_tail);
-    form.appendChild(mail_paragraph);
-    form.appendChild(mail_id_label);
-    form.appendChild(mail_id);
-    form.appendChild(mail_at);
-    form.appendChild(mail_domain_label);
-    form.appendChild(mail_domain);
+    // set legends
+    id_legend.textContent = '아이디 입력 영역';
+    pw_legend.textContent = '비밀번호 입력 영역';
+    pw_check_legend.textContent = '비밀번호 확인 영역';
+    name_legend.textContent = '이름 입력 영역';
+    phone_legend.textContent = '전화번호 입력 영역';
+    mail_legend.textContent = '이메일 입력 영역';
 
-    pw_div.appendChild(pw_input);
-    pw_div.appendChild(pw_image);
-    pw_check_div.appendChild(pw_check_input);
-    pw_check_div.appendChild(pw_check_image);
+    // append elements
 
-    // form.scroll
+    // form
+    form.appendChild(id_field);
+    form.appendChild(pw_field);
+    form.appendChild(pw_check_field);
+    form.appendChild(name_field);
+    form.appendChild(phone_field);
+    form.appendChild(mail_field);
+
+    // id_field
+    id_field.appendChild(id_legend);
+    id_field.appendChild(id_label);
+    id_field.appendChild(id_input);
+    id_field.appendChild(id_button);
+
+    // pw_field
+    pw_field.appendChild(pw_legend);
+    pw_field.appendChild(pw_label);
+    pw_field.appendChild(pw_input);
+    pw_field.appendChild(pw_image);
+
+    // pw confirm field
+    pw_check_field.appendChild(pw_check_legend);
+    pw_check_field.appendChild(pw_check_label);
+    pw_check_field.appendChild(pw_check_input);
+    pw_check_field.appendChild(pw_check_image);
+
+    // name field
+    name_field.appendChild(name_legend);
+    name_field.appendChild(name_label);
+    name_field.appendChild(name_input);
+
+    // phone field
+    phone_field.appendChild(phone_legend);
+    phone_field.appendChild(phone_paragraph);
+    phone_field.appendChild(phone_first);
+    phone_field.appendChild(phone_middle_label);
+    phone_field.appendChild(phone_middle);
+    phone_field.appendChild(phone_tail_label);
+    phone_field.appendChild(phone_tail);
+
+    // email field
+    mail_field.appendChild(mail_legend);
+    mail_field.appendChild(mail_paragraph);
+    mail_field.appendChild(mail_id_label);
+    mail_field.appendChild(mail_id);
+    mail_field.appendChild(mail_at);
+    mail_field.appendChild(mail_domain_label);
+    mail_field.appendChild(mail_domain);
 
     return form;
 }
 
-export { RegisterPurchaser };
+export { RegisterUser };

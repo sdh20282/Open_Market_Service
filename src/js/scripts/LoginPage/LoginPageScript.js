@@ -96,9 +96,9 @@ const tryLogin = (state) => {
             $notValid.style.display = 'none';
             state.setToken(result.token);
             moveLink("/", state);
-        } catch (e) {
-            alert('Login Error : ' + e);
-            console.log(e);
+        } catch (error) {
+            alert('로그인 실패 : ' + error);
+            console.log(error);
         }
     });
 }
