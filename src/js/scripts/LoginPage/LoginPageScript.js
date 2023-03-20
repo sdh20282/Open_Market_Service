@@ -59,8 +59,6 @@ const initCheckInput = () => {
 }
 
 const tryLogin = (state) => {
-    const url = 'https://openmarket.weniv.co.kr/';
-
     const $form = document.querySelector('form');
     const $loginIDInput = $form.querySelector('#loginIDInput');
     const $loginPWInput = $form.querySelector('#loginPWInput');
