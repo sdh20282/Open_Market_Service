@@ -80,10 +80,25 @@ const initDuplicateCheck = (state) => {
     });
 }
 
+const initPasswordInput = () => {
+    const $form = document.querySelector('form');
+    const $input = $form.querySelector('#registerPWInput');
+    const $img = $form.querySelector('#pwCheckOffImage');
+
+    $input.addEventListener('input', () => {
+        if (!$input.value) {
+            $img.setAttribute('src', '/src/images/icon-check-off.png');
+        } else {
+            $img.setAttribute('src', '/src/images/icon-check-on.png');
+        }
+    });
+}
+
 const RegisterPageScript = async (state) => {
     preventFromEvent();
     initSelectTab();
     initDuplicateCheck(state);
+    initPasswordInput();
 }
 
 export default RegisterPageScript;
