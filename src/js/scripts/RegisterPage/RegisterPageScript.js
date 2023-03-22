@@ -47,7 +47,9 @@ const initDuplicateCheck = (state) => {
         }
 
         if (!$input.value) {
-            alert("아아디를 입력해주세요.");
+            $inputCheck.style.display = 'block';
+            $inputCheck.style.color = '#EB5757';
+            $inputCheck.textContent = '아아디를 입력해주세요.';
             return;
         }
 
