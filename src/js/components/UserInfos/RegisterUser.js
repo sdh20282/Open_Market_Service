@@ -7,8 +7,7 @@ import { IROnlyLegend } from "../Tags/Legend/irOnlyLegend.js";
 import { RegisterPageIdLabel } from "../Tags/Labels/RegisterPageIdLabel.js";
 import { RegisterPageIdInput } from "../Tags/Inputs/RegisterPageIdInput.js";
 import { IdDuplicationCheckButton } from "../Tags/Buttons/IdDuplicationCheckButton.js";
-import { RegisterPageIDValidParagraph } from "../Tags/Paragraphs/RegisterPageIDValidParagraph.js";
-import { RegisterPageIDInValidParagraph } from "../Tags/Paragraphs/RegisterPageIDInvalidParagraph.js";
+import { RegisterPageIDValidParagraph } from "../Tags/Paragraphs/RegisterPageIDValidParagraph.js";;
 
 // pw
 import { RegisterPagePWLabel } from "../Tags/Labels/RegisterPagePWLabel.js";
@@ -50,7 +49,6 @@ const RegisterUser = () => {
     const id_input = RegisterPageIdInput();
     const id_button = IdDuplicationCheckButton();
     const id_valid = RegisterPageIDValidParagraph();
-    const id_invalid = RegisterPageIDInValidParagraph();
 
     // pw
     const pw_field = EmptyFieldSet();
@@ -114,7 +112,6 @@ const RegisterUser = () => {
     id_field.appendChild(id_input);
     id_field.appendChild(id_button);
     id_field.appendChild(id_valid);
-    id_field.appendChild(id_invalid);
 
     // pw_field
     pw_field.appendChild(pw_legend);

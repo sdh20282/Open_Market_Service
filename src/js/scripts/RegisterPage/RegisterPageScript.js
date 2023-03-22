@@ -39,6 +39,7 @@ const initDuplicateCheck = (state) => {
     const $form = document.querySelector('form');
     const $input = $form.querySelector('#registerIDInput');
     const $button = $form.querySelector('#checkDuplication');
+    const $inputCheck = $form.querySelector('#validParagraph');
 
     $button.addEventListener('click', async () => {
         if (idChecked) {
@@ -64,15 +65,23 @@ const initDuplicateCheck = (state) => {
             const result = await response.json();
 
             if (result.FAIL_Message) {
-                alert(result.FAIL_Message);
+                $inputCheck.style.display = 'block';
+                $inputCheck.style.color = '#EB5757';
+                $inputCheck.textContent = result.FAIL_Message;
                 return;
             }
 
-            alert(result.Success);
-            $input.setAttribute('readonly', true);
-            $input.style.backgroundColor = '#ccc';
-            $input.style.outline = '0';
-            idChecked = true;
+            if (result.Success) {
+                // $input.setAttribute('readonly', true);
+                // $input.style.backgroundColor = '#ccc';
+                // $input.style.outline = '0';
+
+                $inputCheck.style.display = 'block';
+                $inputCheck.style.color = '#21BF48';
+                $inputCheck.textContent = result.Success;
+
+                idChecked = true;
+            }
         } catch (error) {
             alert('중복 검사 실패 : ' + error);
             console.log(error);
