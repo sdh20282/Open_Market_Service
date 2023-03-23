@@ -1,13 +1,13 @@
 import { SmallGreenButton } from "./SmallGreenButton.js";
 import { buttonStyle } from "../../../styles/components/Buttons/RegisterPageCheckButtonStyle.js";
 
-const IdDuplicationCheckButton = () => {
+const SellerNoCertifyButton = () => {
     const button = SmallGreenButton();
     buttonStyle(button);
-    button.setAttribute('id', 'checkDuplication');
-    button.textContent = '중복확인';
+    button.setAttribute('id', 'certifySellerNo');
+    button.textContent = '인증';
 
     return button;
 }
 
-export { IdDuplicationCheckButton };
+export { SellerNoCertifyButton };
