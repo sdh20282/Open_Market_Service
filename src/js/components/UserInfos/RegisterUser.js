@@ -1,6 +1,7 @@
 import { InputFrom } from "../Tags/Forms/InputFrom.js";
 
 import { EmptyFieldSet } from "../Tags/FieldSet/EmptyFieldSet.js";
+import { HiddenFieldSet } from "../Tags/FieldSet/HiddenFieldSet.js";
 import { IROnlyLegend } from "../Tags/Legend/irOnlyLegend.js";
 
 // id
@@ -42,9 +43,11 @@ import { RegisterPageEmailDomainInput } from "../Tags/Inputs/RegisterPageEmailDo
 // seller
 import { RegisterPageSellerNoLabel } from "../Tags/Labels/RegisterPageSellerNoLabel.js";
 import { RegisterPageSellerNoInput } from "../Tags/Inputs/RegisterPageSellerNoInput.js";
+import { SellerNoCertifyButton } from "../Tags/Buttons/SellerNoCertifyButton.js";
+
+// store
 import { RegisterPageStoreNameLabel } from "../Tags/Labels/RegisterPageStoreNameLabel.js";
 import { RegisterPageStoreNameInput } from "../Tags/Inputs/RegisterPageStoreNameInput.js";
-import { SellerNoCertifyButton } from "../Tags/Buttons/SellerNoCertifyButton.js";
 
 const RegisterUser = () => {
     const form = InputFrom();
@@ -98,14 +101,14 @@ const RegisterUser = () => {
     const mail_domain = RegisterPageEmailDomainInput();
 
     // seller
-    const seller_field = EmptyFieldSet();
+    const seller_field = HiddenFieldSet();
     const seller_legend = IROnlyLegend();
     const seller_no_label = RegisterPageSellerNoLabel();
     const seller_no_input = RegisterPageSellerNoInput();
     const seller_no_button = SellerNoCertifyButton();
 
     // store
-    const store_field = EmptyFieldSet();
+    const store_field = HiddenFieldSet();
     const store_legend = IROnlyLegend();
     const store_no_label = RegisterPageStoreNameLabel();
     const store_no_input = RegisterPageStoreNameInput();

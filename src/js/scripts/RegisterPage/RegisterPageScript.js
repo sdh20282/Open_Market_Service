@@ -15,6 +15,9 @@ const initSelectTab = () => {
     const $purchaserTab = document.querySelector('#selectPurchaser');
     const $sellerTab = document.querySelector('#selectSeller');
     const $form = document.querySelector('form');
+    const $hiddenFields = $form.querySelectorAll('#hiddenFieldSet');
+
+    console.log($hiddenFields);
 
     $purchaserTab.addEventListener('click', () => {
         $purchaserTab.style.backgroundColor = 'white';
@@ -22,6 +25,11 @@ const initSelectTab = () => {
         $sellerTab.style.backgroundColor = '#F2F2F2';
         $sellerTab.style.zIndex = '0';
         $form.style.borderRadius = '0 10px 10px 10px';
+
+        $hiddenFields.forEach(field => {
+            field.style.display = 'none';
+        });
+
         purchaserSelected = true;
     });
 
@@ -31,6 +39,11 @@ const initSelectTab = () => {
         $sellerTab.style.backgroundColor = 'white';
         $sellerTab.style.zIndex = '100';
         $form.style.borderRadius = '10px 0 10px 10px';
+
+        $hiddenFields.forEach(field => {
+            field.style.display = 'block';
+        });
+
         purchaserSelected = false;
     });
 }
