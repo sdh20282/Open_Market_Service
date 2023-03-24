@@ -87,9 +87,9 @@ const initDuplicateCheck = (state) => {
             }
 
             if (result.Success) {
-                // $input.setAttribute('readonly', true);
-                // $input.style.backgroundColor = '#ccc';
-                // $input.style.outline = '0';
+                $input.setAttribute('readonly', true);
+                $input.style.backgroundColor = '#ccc';
+                $input.style.outline = '0';
 
                 $inputCheck.style.display = 'block';
                 $inputCheck.style.color = '#21BF48';
