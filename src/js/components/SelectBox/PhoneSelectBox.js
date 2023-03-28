@@ -24,8 +24,8 @@ const PhoneSelectBox = () => {
     const li_016 = PhoneListItem_016();
 
     container.appendChild(button);
-    container.appendChild(image);
     container.appendChild(ul);
+    button.appendChild(image);
     ul.appendChild(li_010);
     ul.appendChild(li_011);
     ul.appendChild(li_012);

@@ -5,6 +5,11 @@ let idChecked = false;
 
 const preventFromEvent = () => {
     const $form = document.querySelector('form');
+    const $phoneFirstList = document.querySelector('#PhoneSelectUl');
+
+    window.addEventListener('click', () => {
+        $phoneFirstList.style.display = 'none';
+    });
 
     $form.addEventListener('click', (event) => {
         event.preventDefault();
@@ -16,8 +21,6 @@ const initSelectTab = () => {
     const $sellerTab = document.querySelector('#selectSeller');
     const $form = document.querySelector('form');
     const $hiddenFields = $form.querySelectorAll('#hiddenFieldSet');
-
-    console.log($hiddenFields);
 
     $purchaserTab.addEventListener('click', () => {
         $purchaserTab.style.backgroundColor = 'white';
@@ -135,12 +138,39 @@ const initPasswordCheckInput = () => {
     });
 }
 
+const initPhoneInput = () => {
+    const $form = document.querySelector('form');
+    const $phoneFirstButton = $form.querySelector('#phoneSelectButton');
+    const $phoneFirstList = $form.querySelector('#PhoneSelectUl');
+    const $buttonImg = $phoneFirstButton.querySelector('img');
+    const $buttonList = $phoneFirstList.querySelectorAll('button');
+
+    $phoneFirstButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (window.getComputedStyle($phoneFirstList).display == 'none') {
+            $phoneFirstList.style.display = 'block';
+        } else {
+            $phoneFirstList.style.display = 'none';
+        }
+    });
+
+    $buttonList.forEach(button => {
+        button.addEventListener('click', (event) => {
+           $phoneFirstButton.querySelector('span').textContent = button.textContent;
+           $phoneFirstList.style.display = 'none'; 
+        });
+    });
+}
+
 const RegisterPageScript = async (state) => {
     preventFromEvent();
     initSelectTab();
     initDuplicateCheck(state);
     initPasswordInput();
     initPasswordCheckInput();
+    initPhoneInput();
 }
 
 export default RegisterPageScript;

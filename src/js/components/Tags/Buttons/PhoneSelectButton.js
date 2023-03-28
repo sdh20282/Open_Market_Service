@@ -2,9 +2,11 @@ import { buttonStyle } from "../../../styles/components/Buttons/PhoneSelectButto
 
 const PhoneSelectButton = () => {
     const button = document.createElement('button');
+    const span = document.createElement('span');
     buttonStyle(button);
-    button.textContent = '010';
+    span.textContent = '010';
     button.setAttribute('id', 'phoneSelectButton');
+    button.appendChild(span);
 
     return button;
 }

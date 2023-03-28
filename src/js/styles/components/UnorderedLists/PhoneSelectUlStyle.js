@@ -9,6 +9,7 @@ const ulStyle = (element) => {
     element.style.border = '1px solid #C4C4C4';
     element.style.borderRadius = '5px';
     element.style.boxSizing = 'border-box';
+    element.style.zIndex = '10';
     element.style.display = 'none';
 }
 
