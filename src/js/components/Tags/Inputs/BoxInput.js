@@ -8,6 +8,10 @@ const BoxInput = () => {
     const cssTemplateString = `
     .boxInput:focus { 
         outline: 1px solid #21BF48;
+    }
+    
+    .boxInput.notValid:focus { 
+        outline: 1px solid #EB5757;
     }`;
     
     const styleTag = document.createElement("style");

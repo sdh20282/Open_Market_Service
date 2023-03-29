@@ -126,14 +126,17 @@ const initPasswordCheckInput = () => {
     const $input = $form.querySelector('#registerPWInput');
     const $inputCheck = $form.querySelector('#registerPWCheckInput');
     const $img = $form.querySelector('#pwConfirmCheckOffImage');
+    const $p = $form.querySelector('#passwordNotValidParagraph');
 
     $inputCheck.addEventListener('input', () => {
-        if (!$inputCheck.value) {
+        if (!$inputCheck.value || $inputCheck.value != $input.value) {
             $img.setAttribute('src', '/src/images/icon-check-off.png');
-        } else if ($inputCheck.value != $input.value) {
-            $img.setAttribute('src', '/src/images/icon-check-off.png');
+            $p.style.display = 'block';
+            $inputCheck.classList.add('notValid');
         } else {
             $img.setAttribute('src', '/src/images/icon-check-on.png');
+            $p.style.display = 'none';
+            $inputCheck.classList.remove('notValid');
         }
     });
 }
@@ -144,9 +147,6 @@ const initPhoneInput = () => {
     const $phoneFirstList = $form.querySelector('#PhoneSelectUl');
     const $buttonImg = $phoneFirstButton.querySelector('button > img');
     const $buttonList = $phoneFirstList.querySelectorAll('button');
-
-    console.log($buttonImg);
-    console.log($buttonImg.style);
 
     $phoneFirstButton.addEventListener('click', (event) => {
         event.preventDefault();

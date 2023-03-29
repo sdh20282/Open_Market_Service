@@ -19,6 +19,7 @@ import { PWCheckOffImage } from "../Tags/Images/PWCheckOffImage.js";
 import { RegisterPagePWCheckLabel } from "../Tags/Labels/RegisterPagePWCheckLabel.js";
 import { RegisterPagePWCheckInput } from "../Tags/Inputs/RegisterPagePWCheckInput.js";
 import { PWConfirmCheckOffImage } from "../Tags/Images/PWConfirmCheckOffImage.js";
+import { RegisterPagePasswordNotValidParagraph } from "../Tags/Paragraphs/RegisterPagePasswordNotValidParagraph.js";
 
 // name
 import { RegisterPageNameLabel } from "../Tags/Labels/RegisterPageNameLabel.js";
@@ -73,6 +74,7 @@ const RegisterUser = () => {
     const pw_check_label = RegisterPagePWCheckLabel();
     const pw_check_input = RegisterPagePWCheckInput();
     const pw_check_image = PWConfirmCheckOffImage();
+    const pw_check_p = RegisterPagePasswordNotValidParagraph();
 
     // name
     const name_field = EmptyFieldSet();
@@ -151,6 +153,7 @@ const RegisterUser = () => {
     pw_check_field.appendChild(pw_check_label);
     pw_check_field.appendChild(pw_check_input);
     pw_check_field.appendChild(pw_check_image);
+    pw_check_field.appendChild(pw_check_p);
 
     // name field
     name_field.appendChild(name_legend);
