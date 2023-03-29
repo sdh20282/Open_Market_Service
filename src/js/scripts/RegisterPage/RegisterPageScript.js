@@ -5,10 +5,10 @@ let idChecked = false;
 
 const preventFromEvent = () => {
     const $form = document.querySelector('form');
-    const $phoneFirstList = document.querySelector('#PhoneSelectUl');
 
     window.addEventListener('click', () => {
-        $phoneFirstList.style.display = 'none';
+        document.querySelector('#PhoneSelectUl').style.display = 'none';
+        document.querySelector('#phoneSelectButton > img').style.transform = 'rotate(0)';
     });
 
     $form.addEventListener('click', (event) => {
@@ -142,8 +142,11 @@ const initPhoneInput = () => {
     const $form = document.querySelector('form');
     const $phoneFirstButton = $form.querySelector('#phoneSelectButton');
     const $phoneFirstList = $form.querySelector('#PhoneSelectUl');
-    const $buttonImg = $phoneFirstButton.querySelector('img');
+    const $buttonImg = $phoneFirstButton.querySelector('button > img');
     const $buttonList = $phoneFirstList.querySelectorAll('button');
+
+    console.log($buttonImg);
+    console.log($buttonImg.style);
 
     $phoneFirstButton.addEventListener('click', (event) => {
         event.preventDefault();
@@ -151,8 +154,10 @@ const initPhoneInput = () => {
 
         if (window.getComputedStyle($phoneFirstList).display == 'none') {
             $phoneFirstList.style.display = 'block';
+            $buttonImg.style.transform = 'rotate(180deg)';
         } else {
             $phoneFirstList.style.display = 'none';
+            $buttonImg.style.transform = 'rotate(0)';
         }
     });
 
@@ -160,6 +165,7 @@ const initPhoneInput = () => {
         button.addEventListener('click', (event) => {
            $phoneFirstButton.querySelector('span').textContent = button.textContent;
            $phoneFirstList.style.display = 'none'; 
+           $buttonImg.style.transform = 'rotate(0)';
         });
     });
 }
