@@ -2,6 +2,7 @@ import FetchTemplate from "../utils/FetchTemplate.js";
 
 let purchaserSelected = true;
 let idChecked = false;
+let sellerNoChecked = false;
 
 const preventFromEvent = () => {
     const $form = document.querySelector('form');
@@ -170,6 +171,61 @@ const initPhoneInput = () => {
     });
 }
 
+const initCertifySellerNo = () => {
+    const $form = document.querySelector('form');
+    const $input = $form.querySelector('#registerSellerNoInput');
+    const $button = $form.querySelector('#certifySellerNo');
+
+    $button.addEventListener('click', async () => {
+        if (sellerNoChecked) {
+            return;
+        }
+
+        if (!$input.value) {
+            $inputCheck.style.display = 'block';
+            $inputCheck.style.color = '#EB5757';
+            $inputCheck.textContent = '아아디를 입력해주세요.';
+            return;
+        }
+
+        try {
+            const response = await FetchTemplate({
+                state: state,
+                path: 'accounts/signup/valid/username/',
+                method: "POST",
+                needToken: false,
+                body: JSON.stringify({
+                    "username": $input.value,
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.FAIL_Message) {
+                $inputCheck.style.display = 'block';
+                $inputCheck.style.color = '#EB5757';
+                $inputCheck.textContent = result.FAIL_Message;
+                return;
+            }
+
+            if (result.Success) {
+                $input.setAttribute('readonly', true);
+                $input.style.backgroundColor = '#ccc';
+                $input.style.outline = '0';
+
+                $inputCheck.style.display = 'block';
+                $inputCheck.style.color = '#21BF48';
+                $inputCheck.textContent = result.Success;
+
+                idChecked = true;
+            }
+        } catch (error) {
+            alert('판매자 번호 인증 실패 : ' + error);
+            console.log(error);
+        }
+    });
+}
+
 const RegisterPageScript = async (state) => {
     preventFromEvent();
     initSelectTab();
@@ -177,6 +233,7 @@ const RegisterPageScript = async (state) => {
     initPasswordInput();
     initPasswordCheckInput();
     initPhoneInput();
+    initCertifySellerNo();
 }
 
 export default RegisterPageScript;
