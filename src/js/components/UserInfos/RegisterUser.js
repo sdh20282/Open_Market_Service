@@ -45,6 +45,7 @@ import { RegisterPageEmailDomainInput } from "../Tags/Inputs/RegisterPageEmailDo
 import { RegisterPageSellerNoLabel } from "../Tags/Labels/RegisterPageSellerNoLabel.js";
 import { RegisterPageSellerNoInput } from "../Tags/Inputs/RegisterPageSellerNoInput.js";
 import { SellerNoCertifyButton } from "../Tags/Buttons/SellerNoCertifyButton.js";
+import { RegisterPageSellerNoNotValidParagraph } from "../Tags/Paragraphs/RegisterPageSellerNoNotValidParagraph.js";
 
 // store
 import { RegisterPageStoreNameLabel } from "../Tags/Labels/RegisterPageStoreNameLabel.js";
@@ -108,6 +109,7 @@ const RegisterUser = () => {
     const seller_no_label = RegisterPageSellerNoLabel();
     const seller_no_input = RegisterPageSellerNoInput();
     const seller_no_button = SellerNoCertifyButton();
+    const seller_no_p = RegisterPageSellerNoNotValidParagraph();
 
     // store
     const store_field = HiddenFieldSet();
@@ -183,6 +185,7 @@ const RegisterUser = () => {
     seller_field.appendChild(seller_no_label);
     seller_field.appendChild(seller_no_input);
     seller_field.appendChild(seller_no_button);
+    seller_field.appendChild(seller_no_p);
 
     // store field
     store_field.appendChild(store_legend);

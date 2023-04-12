@@ -171,10 +171,11 @@ const initPhoneInput = () => {
     });
 }
 
-const initCertifySellerNo = () => {
+const initCertifySellerNo = (state) => {
     const $form = document.querySelector('form');
     const $input = $form.querySelector('#registerSellerNoInput');
     const $button = $form.querySelector('#certifySellerNo');
+    const $inputCheck = $form.querySelector('#sellerNoNotValidParagraph');
 
     $button.addEventListener('click', async () => {
         if (sellerNoChecked) {
@@ -184,18 +185,18 @@ const initCertifySellerNo = () => {
         if (!$input.value) {
             $inputCheck.style.display = 'block';
             $inputCheck.style.color = '#EB5757';
-            $inputCheck.textContent = '아아디를 입력해주세요.';
+            $inputCheck.textContent = '판매자 번호를 입력해주세요.';
             return;
         }
 
         try {
             const response = await FetchTemplate({
                 state: state,
-                path: 'accounts/signup/valid/username/',
+                path: 'accounts/signup/valid/company_registration_number/',
                 method: "POST",
                 needToken: false,
                 body: JSON.stringify({
-                    "username": $input.value,
+                    "company_registration_number": $input.value,
                 })
             });
 
@@ -217,7 +218,7 @@ const initCertifySellerNo = () => {
                 $inputCheck.style.color = '#21BF48';
                 $inputCheck.textContent = result.Success;
 
-                idChecked = true;
+                sellerNoChecked = true;
             }
         } catch (error) {
             alert('판매자 번호 인증 실패 : ' + error);
@@ -233,7 +234,7 @@ const RegisterPageScript = async (state) => {
     initPasswordInput();
     initPasswordCheckInput();
     initPhoneInput();
-    initCertifySellerNo();
+    initCertifySellerNo(state);
 }
 
 export default RegisterPageScript;
