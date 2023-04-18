@@ -6,7 +6,7 @@ import { SellerTabButton } from "../../components/Tags/Buttons/SellerTabButton.j
 import { RegisterUser } from "../../components/UserInfos/RegisterUser.js";
 import { LoginColorDiv } from "../../components/Tags/Divs/LoginColorDiv.js";
 import { RegisterButton } from "../../components/Tags/Buttons/RegisterButton.js";
-import { RegisterPageAgreeDiv } from "../../components/Tags/Divs/RegisterPageAgreeDiv.js";
+import { RegisterPageAgreeForm } from "../../components/Tags/Forms/RegisterPageAgreeForm.js";
 import { RegisterPageAgreeInput } from "../../components/Tags/Inputs/RegisterPageAgreeInput.js";
 import { RegisterPageAgreeLabel } from "../../components/Tags/Labels/RegisterPageAgreeLabel.js";
 
@@ -18,7 +18,7 @@ const Main = () => {
     const sellerTab = SellerTabButton();
     const form = RegisterUser();
     const div = LoginColorDiv();
-    const agree_div = RegisterPageAgreeDiv();
+    const agree_from = RegisterPageAgreeForm();
     const agree_input = RegisterPageAgreeInput();
     const agree_label = RegisterPageAgreeLabel();
     const button = RegisterButton();
@@ -29,11 +29,11 @@ const Main = () => {
     section.appendChild(sellerTab);
     section.appendChild(form);
     section.appendChild(div);
-    section.appendChild(agree_div);
+    section.appendChild(agree_from);
     section.appendChild(button);
 
-    agree_div.appendChild(agree_input);
-    agree_div.appendChild(agree_label);
+    agree_from.appendChild(agree_input);
+    agree_from.appendChild(agree_label);
 
     return main;
 }
