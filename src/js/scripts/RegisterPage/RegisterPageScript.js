@@ -1,4 +1,5 @@
 import FetchTemplate from "../utils/FetchTemplate.js";
+import { moveLink } from "../../router.js";
 
 let purchaserSelected = true;
 let idChecked = false;
@@ -352,6 +353,81 @@ const checkComplete = () => {
 }
 
 const tryRegister = (state) => {
+    const $button = document.querySelector('#registerButton');
+
+    $button.addEventListener('click', async () => {
+        if (!$button.classList.contains('complete')) {
+            return;
+        }
+
+        const $form = document.querySelector('form');
+        const id = $form.querySelector('#registerIDInput').value;
+        const pw = $form.querySelector('#registerPWInput').value;
+        const pwCheck = $form.querySelector('#registerPWCheckInput').value;
+        const name = $form.querySelector('#registerNameInput').value;
+        const phoneFirst = $form.querySelector('#phoneSelectButton > span').textContent;
+        const phoneMiddle = $form.querySelector('#registerPhoneMiddle').value;
+        const phoneTail = $form.querySelector('#registerPhoneTail').value;
+        const sellerNo = $form.querySelector('#registerSellerNoInput').value;
+        const storeName = $form.querySelector('#registerStoreNameInput').value;
+
+        try {
+            if (purchaserSelected) {
+                const response = await FetchTemplate({
+                    state: state,
+                    path: 'accounts/signup/',
+                    method: "POST",
+                    needToken: false,
+                    body: JSON.stringify({
+                        "username": id,
+                        "password": pw,
+                        "password2": pwCheck,
+                        "phone_number": "" + phoneFirst + phoneMiddle + phoneTail,
+                        "name": name,
+                    })
+                });
+
+                const result = await response.json();
+
+                if (!result.name || !result.phone_number || !result.user_type || !result.username) {
+                    alert(result.username || result.password || result.phone_number);
+                    return;
+                }
+
+                alert('회원가입 성공!');
+            } else {
+                const response = await FetchTemplate({
+                    state: state,
+                    path: 'accounts/signup_seller/',
+                    method: "POST",
+                    needToken: false,
+                    body: JSON.stringify({
+                        "username": id,
+                        "password": pw,
+                        "password2": pwCheck,
+                        "phone_number": "" + phoneFirst + phoneMiddle + phoneTail,
+                        "name": name,
+                        "company_registration_number": sellerNo,
+                        "store_name": storeName,
+                    })
+                });
+
+                const result = await response.json();
+
+                if (!result.name || !result.phone_number || !result.user_type || !result.username || !result.company_registration_number || !result.store_name) {
+                    alert(result.username || result.password || result.phone_number || result.company_registration_number || result.store_name);
+                    return;
+                }
+
+                alert('회원가입 성공!');
+            }
+
+            moveLink("/", state);
+        } catch (error) {
+            alert('회원 등록 실패 : ' + error);
+            console.log(error);
+        }
+    });
 }
 
 const RegisterPageScript = async (state) => {
