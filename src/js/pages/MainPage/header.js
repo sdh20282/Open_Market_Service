@@ -1,7 +1,7 @@
-import { TopBarLogin } from '../../components/TopBars/TopBarLogin.js'
+import { TopBar } from '../../components/TopBars/TopBar.js'
 
 const Header = () => {
-    return TopBarLogin();
+    return TopBar();
 }
 
 export default Header;

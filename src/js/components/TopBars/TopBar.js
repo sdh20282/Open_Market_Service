@@ -1,13 +1,13 @@
 import { TopBarHeader } from "../Tags/Headers/TopBarHeader.js";
 import { NormalLogo } from "../Logos/NormalLogo.js";
 import { SearchBar } from '../SearchBar/SearchBar.js'
-import { NavBarLogin } from "../NavBars/NavBarLogin.js";
+import { NavBarMainPage } from "../NavBars/NavBarMainPage.js";
 
-const TopBarLogin = () => {
+const TopBar = () => {
     const header = TopBarHeader();
     const logo = NormalLogo();
     const form = SearchBar();
-    const nav = NavBarLogin();
+    const nav = NavBarMainPage();
     
     header.appendChild(logo);
     header.appendChild(form);
@@ -16,4 +16,4 @@ const TopBarLogin = () => {
     return header;
 }
 
-export { TopBarLogin };
+export { TopBar };

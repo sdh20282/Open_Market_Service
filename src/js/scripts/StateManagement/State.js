@@ -1,6 +1,6 @@
 class State {
     constructor() {
-        this.user = '';
+        this.user = null;
         this.token = '';
     }
 
@@ -14,6 +14,10 @@ class State {
 
     setUser(user) {
         this.user = user;
+    }
+
+    getUser() {
+        return this.user;
     }
 }
 

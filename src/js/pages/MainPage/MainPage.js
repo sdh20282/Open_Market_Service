@@ -2,7 +2,7 @@ import Header from "./Header.js";
 import Carousel from "./Carousel.js";
 import { BodyStyle } from "../../styles/pages/Share/BodyStyle.js";
 
-const MainPage = async () => {
+const MainPage = async (state) => {
     const body = document.body;
     BodyStyle(body);
 
