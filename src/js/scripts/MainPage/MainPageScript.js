@@ -9,8 +9,6 @@ const preventFromEvent = () => {
 const initNavBar = (state) => {
     const anchors = document.querySelectorAll('#topBarNav a');
 
-    console.log(anchors);
-
     if (state.getToken()) {
         anchors[1].style.display = 'none';
 
