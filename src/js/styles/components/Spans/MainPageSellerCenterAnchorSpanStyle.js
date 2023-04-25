@@ -1,5 +1,5 @@
 const spanStyle = (element) => {
-    element.style.fontSize = '18px';
+    element.style.fontSize = '16px';
     element.style.color = '#fff';
 }
 

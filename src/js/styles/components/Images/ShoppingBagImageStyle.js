@@ -1,5 +1,5 @@
 const imageStyle = (element) => {
-    element.style.width = '32px';
+    element.style.width = '28px';
 }
 
 export { imageStyle };

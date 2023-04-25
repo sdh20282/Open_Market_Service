@@ -8,6 +8,7 @@ const anchorStyle = (element) => {
     element.style.backgroundColor = '#21BF48';
     element.style.borderRadius = '6px';
     element.style.marginLeft = '30px';
+    element.style.gap = '6px';
 }
 
 export { anchorStyle };
