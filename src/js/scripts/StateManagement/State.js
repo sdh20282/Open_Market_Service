@@ -2,6 +2,7 @@ class State {
     constructor() {
         this.user = null;
         this.token = '';
+        this.isPurchaser = true;
     }
 
     setToken(token) {
@@ -18,6 +19,14 @@ class State {
 
     getUser() {
         return this.user;
+    }
+
+    setIsPurchaser(isPurchaser) {
+        this.isPurchaser = isPurchaser;
+    }
+
+    getIsPurchaser() {
+        return this.isPurchaser;
     }
 }
 

@@ -9,10 +9,19 @@ const preventFromEvent = () => {
 const initNavBar = (state) => {
     const anchors = document.querySelectorAll('#topBarNav a');
 
+    console.log(anchors);
+
     if (state.getToken()) {
         anchors[1].style.display = 'none';
+
+        if (state.getIsPurchaser()) {
+            anchors[3].style.display = 'none';
+        } else {
+            anchors[0].style.display = 'none';
+        }
     } else {
         anchors[2].style.display = 'none';
+        anchors[3].style.display = 'none';
     }
 }
 

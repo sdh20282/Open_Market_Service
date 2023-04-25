@@ -6,6 +6,7 @@ import { UserAnchor } from '../Tags/Anchors/UserAnchor.js';
 import { CartImage } from '../Tags/Images/CartImage.js';
 import { LoginImage } from '../Tags/Images/LoginImage.js';
 import { UserImage } from '../Tags/Images/UserImage.js';
+import { MainPageSellerCenterAnchor } from '../Tags/Anchors/MainPageSellerCenterAnchor.js';
 
 const NavBarMainPage = () => {
     const nav = TopBarNav();
@@ -23,6 +24,9 @@ const NavBarMainPage = () => {
     const user_anchor = UserAnchor();
     const user_image = UserImage();
 
+    const seller_center_li = document.createElement('li');
+    const seller_center = MainPageSellerCenterAnchor();
+
     nav.appendChild(ul);
 
     ul.appendChild(cart_li);
@@ -36,6 +40,9 @@ const NavBarMainPage = () => {
     ul.appendChild(user_li);
     user_li.appendChild(user_anchor);
     user_anchor.appendChild(user_image);
+
+    ul.appendChild(seller_center_li);
+    seller_center_li.appendChild(seller_center);
 
     return nav;
 }

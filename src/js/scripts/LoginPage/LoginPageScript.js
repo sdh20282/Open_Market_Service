@@ -95,6 +95,7 @@ const tryLogin = (state) => {
 
             $notValid.style.display = 'none';
             state.setToken(result.token);
+            state.setIsPurchaser(purchaserSelected);
             moveLink("/", state);
         } catch (error) {
             alert('로그인 실패 : ' + error);
